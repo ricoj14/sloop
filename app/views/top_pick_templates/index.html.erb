@@ -62,19 +62,31 @@
 
         <!-- Display top_pick.venue_id start -->
         <td>
-          <%= top_pick.venue.name %>
+          <% if top_pick.venue.present? %>
+            <a href="/venues/<%= top_pick.venue.id %>">
+              <%= top_pick.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display top_pick.venue_id end -->
 
         <!-- Display top_pick.dish_id start -->
         <td>
-          <%= top_pick.dish.cuisine_id %>
+          <% if top_pick.dish.present? %>
+            <a href="/dishes/<%= top_pick.dish.id %>">
+              <%= top_pick.dish.cuisine_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display top_pick.dish_id end -->
 
         <!-- Display top_pick.user_id start -->
         <td>
-          <%= top_pick.user.email %>
+          <% if top_pick.user.present? %>
+            <a href="/users/<%= top_pick.user.id %>">
+              <%= top_pick.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display top_pick.user_id end -->
 
