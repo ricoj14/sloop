@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Top pick #<%= @top_pick.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/top_picks" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link top_pick start -->
+      <div class="col">
+        <a href="/top_picks/<%= @top_pick.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit top pick
+        </a>
+      </div>
+      <!-- Edit link top_pick end -->
+
+      <!-- Delete link top_pick start -->
+      <div class="col">
+        <a href="/delete_top_pick/<%= @top_pick.id %>" class="btn btn-block btn-outline-secondary">
+          Delete top pick
+        </a>
+      </div>
+      <!-- Delete link top_pick end -->
+    </div>
+
+    <dl>
+      <dt>
+        Venue
+      </dt>
+      <!-- Display venue_id start -->
+      <dd>
+        <%= @top_pick.venue_id %>
+      </dd>
+      <!-- Display venue_id end -->
+
+      <dt>
+        Dish
+      </dt>
+      <!-- Display dish_id start -->
+      <dd>
+        <%= @top_pick.dish_id %>
+      </dd>
+      <!-- Display dish_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @top_pick.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@top_pick.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@top_pick.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Top pick resource:
+
+  # CREATE
+  get("/top_picks/new", { :controller => "top_picks", :action => "new_form" })
+  post("/create_top_pick", { :controller => "top_picks", :action => "create_row" })
+
+  # READ
+  get("/top_picks", { :controller => "top_picks", :action => "index" })
+  get("/top_picks/:id_to_display", { :controller => "top_picks", :action => "show" })
+
+  # UPDATE
+  get("/top_picks/:prefill_with_id/edit", { :controller => "top_picks", :action => "edit_form" })
+  post("/update_top_pick/:id_to_modify", { :controller => "top_picks", :action => "update_row" })
+
+  # DELETE
+  get("/delete_top_pick/:id_to_remove", { :controller => "top_picks", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @top_pick.present? %>
+  <% if @top_pick.errors.any? %>
+    <% @top_pick.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new top pick
+</h1>
+
+
+<hr>
+
+<!-- Form top_pick start -->
+<form action="/create_top_pick" method="post">
+<!-- Form top_pick end -->
+
+  <!-- Label and input for venue_id start -->
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <!-- Input for venue_id start -->
+    <input type="text" id="venue_id" name="venue_id" class="form-control" value="<%= @top_pick.venue_id %>">
+    <!-- Input for venue_id end -->
+  </div>
+  <!-- Label and input for venue_id end -->
+
+  <!-- Label and input for dish_id start -->
+  <div class="form-group">
+    <label for="dish_id">
+      Dish
+    </label>
+
+    <!-- Input for dish_id start -->
+    <input type="text" id="dish_id" name="dish_id" class="form-control" value="<%= @top_pick.dish_id %>">
+    <!-- Input for dish_id end -->
+  </div>
+  <!-- Label and input for dish_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @top_pick.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create top pick
+  </button>
+</form>
+
+<hr>
+
+<a href="/top_picks">
+  Go back
+</a>
