@@ -33,6 +33,38 @@ class TopPicksController < ApplicationController
     end
   end
 
+  def create_row_from_dish
+    @top_pick = TopPick.new
+
+    @top_pick.venue_id = params.fetch("venue_id")
+    @top_pick.dish_id = params.fetch("dish_id")
+    @top_pick.user_id = params.fetch("user_id")
+
+    if @top_pick.valid?
+      @top_pick.save
+
+      redirect_to("/dishes/#{@top_pick.dish_id}", notice: "TopPick created successfully.")
+    else
+      render("top_pick_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_venue
+    @top_pick = TopPick.new
+
+    @top_pick.venue_id = params.fetch("venue_id")
+    @top_pick.dish_id = params.fetch("dish_id")
+    @top_pick.user_id = params.fetch("user_id")
+
+    if @top_pick.valid?
+      @top_pick.save
+
+      redirect_to("/venues/#{@top_pick.venue_id}", notice: "TopPick created successfully.")
+    else
+      render("top_pick_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @top_pick = TopPick.find(params.fetch("prefill_with_id"))
 

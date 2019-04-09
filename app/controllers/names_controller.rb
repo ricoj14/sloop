@@ -6,6 +6,7 @@ class NamesController < ApplicationController
   end
 
   def show
+    @venue = Venue.new
     @name = Name.find(params.fetch("id_to_display"))
 
     render("name_templates/show.html.erb")

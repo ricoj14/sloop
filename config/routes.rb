@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/venues/new", { :controller => "venues", :action => "new_form" })
   post("/create_venue", { :controller => "venues", :action => "create_row" })
+  post("/create_venue_from_name", { :controller => "venues", :action => "create_row_from_name" })
 
   # READ
   get("/venues", { :controller => "venues", :action => "index" })
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/top_picks/new", { :controller => "top_picks", :action => "new_form" })
   post("/create_top_pick", { :controller => "top_picks", :action => "create_row" })
+  post("/create_top_pick_from_venue", { :controller => "top_picks", :action => "create_row_from_venue" })
+  post("/create_top_pick_from_dish", { :controller => "top_picks", :action => "create_row_from_dish" })
 
   # READ
   get("/top_picks", { :controller => "top_picks", :action => "index" })
@@ -77,6 +80,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/dishes/new", { :controller => "dishes", :action => "new_form" })
   post("/create_dish", { :controller => "dishes", :action => "create_row" })
+  post("/create_dish_from_cuisine", { :controller => "dishes", :action => "create_row_from_cuisine" })
 
   # READ
   get("/dishes", { :controller => "dishes", :action => "index" })
