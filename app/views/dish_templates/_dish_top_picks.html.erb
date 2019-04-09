@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @dish.top_picks.each do |top_pick| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/top_picks/<%= top_pick.id %>">
           <%= top_pick.venue_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == top_pick.user %>
           <a href="/delete_top_pick_from_dish/<%= top_pick.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="dish_top_picks_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "dish_templates/dish_top_picks_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

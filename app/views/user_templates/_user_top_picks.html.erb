@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.top_picks.each do |top_pick| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/top_picks/<%= top_pick.id %>">
           <%= top_pick.venue_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

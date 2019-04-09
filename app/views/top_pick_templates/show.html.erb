@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link top_pick start -->
       <div class="col">
         <% if current_user == @top_pick.user %>
           <a href="/top_picks/<%= @top_pick.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link top_pick end -->
 
-      <!-- Delete link top_pick start -->
       <div class="col">
         <% if current_user == @top_pick.user %>
           <a href="/delete_top_pick/<%= @top_pick.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link top_pick end -->
     </div>
 
     <dl>
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @top_pick.venue.present? %>
           <a href="/venues/<%= @top_pick.venue_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         Dish
       </dt>
-      <!-- Display dish_id start -->
       <dd>
         <% if @top_pick.dish.present? %>
           <a href="/dishes/<%= @top_pick.dish_id %>">
@@ -57,12 +50,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display dish_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @top_pick.user.present? %>
           <a href="/users/<%= @top_pick.user_id %>">
@@ -70,28 +61,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@top_pick.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@top_pick.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

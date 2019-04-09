@@ -1,29 +1,16 @@
-<!-- Form top_pick start -->
 <form action="/create_top_pick_from_dish" method="post">
-<!-- Form top_pick end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @top_pick.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
-  <!-- Label and input for dish_id start -->
-  <!-- Input for dish_id start -->
   <input type="hidden" name="dish_id" value="<%= @dish.id %>">
-  <!-- Input for dish_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create top pick

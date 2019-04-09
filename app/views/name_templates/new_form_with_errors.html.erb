@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @name.present? %>
   <% if @name.errors.any? %>
     <% @name.errors.full_messages.each do |message| %>
@@ -16,9 +15,7 @@
 
 <hr>
 
-<!-- Form name start -->
 <form action="/create_name" method="post">
-<!-- Form name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create name
