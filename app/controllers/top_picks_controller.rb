@@ -55,6 +55,30 @@ class TopPicksController < ApplicationController
     end
   end
 
+  def destroy_row_from_dish
+    @top_pick = TopPick.find(params.fetch("id_to_remove"))
+
+    @top_pick.destroy
+
+    redirect_to("/dishes/#{@top_pick.dish_id}", notice: "TopPick deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @top_pick = TopPick.find(params.fetch("id_to_remove"))
+
+    @top_pick.destroy
+
+    redirect_to("/users/#{@top_pick.user_id}", notice: "TopPick deleted successfully.")
+  end
+
+  def destroy_row_from_venue
+    @top_pick = TopPick.find(params.fetch("id_to_remove"))
+
+    @top_pick.destroy
+
+    redirect_to("/venues/#{@top_pick.venue_id}", notice: "TopPick deleted successfully.")
+  end
+
   def destroy_row
     @top_pick = TopPick.find(params.fetch("id_to_remove"))
 
