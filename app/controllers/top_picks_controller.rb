@@ -76,7 +76,7 @@ class TopPicksController < ApplicationController
 
     @top_pick.venue_id = params.fetch("venue_id")
     @top_pick.dish_id = params.fetch("dish_id")
-    @top_pick.user_id = params.fetch("user_id")
+    
 
     if @top_pick.valid?
       @top_pick.save
