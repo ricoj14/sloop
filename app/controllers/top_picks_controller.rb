@@ -10,7 +10,7 @@ class TopPicksController < ApplicationController
   end
 
   def index
-    @top_picks = TopPick.all
+    @top_picks = TopPick.page(params[:page]).per(10)
 
     render("top_pick_templates/index.html.erb")
   end

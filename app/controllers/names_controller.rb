@@ -1,6 +1,6 @@
 class NamesController < ApplicationController
   def index
-    @names = Name.all
+    @names = Name.page(params[:page]).per(10)
 
     render("name_templates/index.html.erb")
   end
