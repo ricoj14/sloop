@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_top_pick_from_venue/<%= top_pick.id %>">
-          Delete
-        </a>
+        <%if current_user == top_pick.user %>
+          <a href="/delete_top_pick_from_venue/<%= top_pick.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

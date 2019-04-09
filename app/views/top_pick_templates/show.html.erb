@@ -13,17 +13,21 @@
 
       <!-- Edit link top_pick start -->
       <div class="col">
-        <a href="/top_picks/<%= @top_pick.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit top pick
-        </a>
+        <% if current_user == @top_pick.user %>
+          <a href="/top_picks/<%= @top_pick.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit top_pick
+          </a>
+        <% end %>
       </div>
       <!-- Edit link top_pick end -->
 
       <!-- Delete link top_pick start -->
       <div class="col">
-        <a href="/delete_top_pick/<%= @top_pick.id %>" class="btn btn-block btn-outline-secondary">
-          Delete top pick
-        </a>
+        <% if current_user == @top_pick.user %>
+          <a href="/delete_top_pick/<%= @top_pick.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete top_pick
+          </a>
+        <% end %>
       </div>
       <!-- Delete link top_pick end -->
     </div>
