@@ -10,7 +10,8 @@ class TopPicksController < ApplicationController
   end
 
   def index
-    @top_picks = TopPick.page(params[:page]).per(10)
+    @q = TopPick.ransack(params[:q])
+    @top_picks = @q.result(:distinct => true).includes(:dish, :user, :venue).page(params[:page]).per(10)
 
     render("top_pick_templates/index.html.erb")
   end

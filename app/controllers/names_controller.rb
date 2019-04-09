@@ -1,6 +1,7 @@
 class NamesController < ApplicationController
   def index
-    @names = Name.page(params[:page]).per(10)
+    @q = Name.ransack(params[:q])
+    @names = @q.result(:distinct => true).includes(:venues).page(params[:page]).per(10)
 
     render("name_templates/index.html.erb")
   end
