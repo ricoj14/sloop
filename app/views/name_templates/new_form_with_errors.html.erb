@@ -1,0 +1,32 @@
+<!-- Validation failure messages -->
+<% if @name.present? %>
+  <% if @name.errors.any? %>
+    <% @name.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new name
+</h1>
+
+
+<hr>
+
+<!-- Form name start -->
+<form action="/create_name" method="post">
+<!-- Form name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create name
+  </button>
+</form>
+
+<hr>
+
+<a href="/names">
+  Go back
+</a>

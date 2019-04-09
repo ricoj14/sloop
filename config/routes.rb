@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Name resource:
+
+  # CREATE
+  get("/names/new", { :controller => "names", :action => "new_form" })
+  post("/create_name", { :controller => "names", :action => "create_row" })
+
+  # READ
+  get("/names", { :controller => "names", :action => "index" })
+  get("/names/:id_to_display", { :controller => "names", :action => "show" })
+
+  # UPDATE
+  get("/names/:prefill_with_id/edit", { :controller => "names", :action => "edit_form" })
+  post("/update_name/:id_to_modify", { :controller => "names", :action => "update_row" })
+
+  # DELETE
+  get("/delete_name/:id_to_remove", { :controller => "names", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Venue resource:
 
   # CREATE

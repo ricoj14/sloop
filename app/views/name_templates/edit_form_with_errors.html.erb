@@ -1,0 +1,29 @@
+<!-- Validation failure messages -->
+<% if @name.errors.any? %>
+  <% @name.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit name #<%= @name.id %>
+</h1>
+
+<hr>
+
+<!-- Form name start -->
+<form action="/update_name/<%= @name.id %>" method="post">
+<!-- Form name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update name
+  </button>
+</form>
+
+<hr>
+
+<a href="/names">
+  Go back
+</a>

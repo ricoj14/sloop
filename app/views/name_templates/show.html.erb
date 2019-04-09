@@ -1,0 +1,55 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Name #<%= @name.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/names" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link name start -->
+      <div class="col">
+        <a href="/names/<%= @name.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit name
+        </a>
+      </div>
+      <!-- Edit link name end -->
+
+      <!-- Delete link name start -->
+      <div class="col">
+        <a href="/delete_name/<%= @name.id %>" class="btn btn-block btn-outline-secondary">
+          Delete name
+        </a>
+      </div>
+      <!-- Delete link name end -->
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@name.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@name.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

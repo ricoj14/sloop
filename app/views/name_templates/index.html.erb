@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All names
+    </h1>
+
+    <a href="/names/new" class="btn btn-block btn-outline-secondary">
+      Add a new name
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @names.each do |name| %>
+      <tr>
+        <!-- Display name.id start -->
+        <td>
+          <%= name.id %>
+        </td>
+        <!-- Display name.id end -->
+
+        <!-- Display name.created_at start -->
+        <td>
+          <%= time_ago_in_words(name.created_at) %> ago
+        </td>
+        <!-- Display name.created_at end -->
+
+        <!-- Display name.updated_at start -->
+        <td>
+          <%= time_ago_in_words(name.updated_at) %> ago
+        </td>
+        <!-- Display name.updated_at end -->
+
+        <td>
+          <a href="/names/<%= name.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
